@@ -6,8 +6,6 @@ ENV/
 .venv/
 .env/
 
-# Embedded Git Repositories
-Agentic-LanggraphCrash-course/
 
 # Python
 __pycache__/
