@@ -1,12 +1,13 @@
 # MyChoice App
 
-A simple web application for managing items categorized by groups.
+A comprehensive web application for managing items categorized by groups with an integrated AI-powered policy management and risk assessment system.
 
 ## Project Structure
 
-The application consists of two main parts:
-- **Backend**: Django REST API
+The application consists of three main parts:
+- **Backend**: Django REST API with integrated underwriting and policy management
 - **Frontend**: React application
+- **AI Policy Management System**: LangGraph-based intelligent workflow for policy analysis, risk assessment, and decision making
 
 ## Prerequisites
 
@@ -74,7 +75,39 @@ venv\Scripts\activate
 
 ## API Endpoints
 
+### Items API
 - **GET /items/**: List all items
 - **POST /items/**: Create a new item
 - **GET /items/{id}/**: Retrieve a specific item
 - **PATCH /items/{id}/**: Update a specific item
+
+### Underwriting API
+- **POST /underwriting/applications/**: Submit a new application for underwriting
+- **GET /underwriting/applications/{id}/**: Retrieve application status and results
+- **POST /underwriting/analyze/**: Analyze application data through AI workflow
+- **GET /underwriting/policies/**: List policy documents and regulations
+
+## AI Policy Management System
+
+The application includes an advanced AI-powered policy management system built with LangGraph that provides intelligent underwriting, risk assessment, and policy analysis capabilities.
+
+![Policy Management System Architecture](./docs/policy-management-architecture.png)
+
+### Key Features
+
+- **Intelligent Data Processing**: Automated extraction and processing of policy documents and application data
+- **Risk Assessment**: AI-driven risk analysis using advanced language models
+- **Policy Compliance**: Automated checking against regulatory requirements and internal policies
+- **Flag Detection & Explanation**: Intelligent identification and detailed explanation of potential issues
+- **Vector-based Search**: FAISS-powered semantic search for policy and regulation retrieval
+- **Multi-Agent Workflow**: Coordinated AI agents for comprehensive policy evaluation
+
+### System Components
+
+- **LangGraph Orchestrator**: Manages the entire workflow and agent coordination
+- **Data Fetcher**: Retrieves relevant policies, claims, and regulatory information
+- **Embedding Agent**: Converts documents into vector representations for semantic search
+- **FAISS Vector Database**: Stores and retrieves document embeddings efficiently
+- **Risk Analyzer**: Evaluates applications against risk criteria and generates assessments
+- **Groq LLM**: Provides natural language processing and analysis capabilities
+- **Flag Explainer**: Identifies potential issues and provides detailed explanations
