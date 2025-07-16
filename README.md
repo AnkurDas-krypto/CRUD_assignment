@@ -93,14 +93,6 @@ The application includes an advanced AI-powered policy management system built w
 
 ![Policy Management System Architecture](./policy_mgmt.png)
 
-### Key Features
-
-- **Intelligent Data Processing**: Automated extraction and processing of policy documents and application data
-- **Risk Assessment**: AI-driven risk analysis using advanced language models
-- **Policy Compliance**: Automated checking against regulatory requirements and internal policies
-- **Flag Detection & Explanation**: Intelligent identification and detailed explanation of potential issues
-- **Vector-based Search**: FAISS-powered semantic search for policy and regulation retrieval
-- **Multi-Agent Workflow**: Coordinated AI agents for comprehensive policy evaluation
 
 ### System Components
 
@@ -109,5 +101,4 @@ The application includes an advanced AI-powered policy management system built w
 - **Embedding Agent**: Converts documents into vector representations for semantic search
 - **FAISS Vector Database**: Stores and retrieves document embeddings efficiently
 - **Risk Analyzer**: Evaluates applications against risk criteria and generates assessments
-- **Groq LLM**: Provides natural language processing and analysis capabilities
 - **Flag Explainer**: Identifies potential issues and provides detailed explanations
