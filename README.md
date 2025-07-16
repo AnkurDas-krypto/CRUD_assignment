@@ -91,7 +91,7 @@ venv\Scripts\activate
 
 The application includes an advanced AI-powered policy management system built with LangGraph that provides intelligent underwriting, risk assessment, and policy analysis capabilities.
 
-![Policy Management System Architecture](./docs/policy-management-architecture.png)
+![Policy Management System Architecture](./policy_mgmt.png)
 
 ### Key Features
 
