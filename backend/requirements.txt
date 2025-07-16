@@ -1,0 +1,17 @@
+django==5.2.4
+djangorestframework==3.16.0
+django-cors-headers==4.7.0
+faster-whisper>=0.10.0
+torch>=2.2.0
+torchaudio>=2.2.0
+langgraph
+langchain
+langsmith
+python-dotenv
+langchain-groq 
+langchain_tavily
+faiss-cpu
+tiktoken
+numpy
+uuid
+requests
