@@ -16,7 +16,7 @@ The application consists of two main parts:
 
 ## Getting Started
 
-#### Backend Setup
+### Backend Setup
 
 1. Navigate to the backend directory
    ```
@@ -36,6 +36,7 @@ source venv/bin/activate
 ```bash
 python -m venv venv
 venv\Scripts\activate
+```
 
 3. Install Python dependencies
    ```
@@ -53,7 +54,7 @@ venv\Scripts\activate
    ```
    The backend will be available at http://localhost:8000
 
-#### Frontend Setup
+### Frontend Setup
 
 1. Navigate to the frontend directory
    ```
