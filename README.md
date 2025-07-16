@@ -16,39 +16,38 @@ The application consists of two main parts:
 
 ## Getting Started
 
-### Option 1: Using the Start Script
-
-The easiest way to run the application is to use the provided start script:
-
-```
-./start.sh
-```
-
-This script will:
-1. Start the Django backend server on port 8000
-2. Install frontend dependencies if needed
-3. Start the React frontend on port 3000
-
-### Option 2: Manual Setup
-
 #### Backend Setup
 
 1. Navigate to the backend directory
    ```
    cd backend
    ```
+2. Create Virtual Environment
 
-2. Install Python dependencies
+Before installing dependencies, create a virtual environment:
+
+**On macOS/Linux:**
+```bash
+python -m venv venv
+source venv/bin/activate
+```
+
+**On Windows:**
+```bash
+python -m venv venv
+venv\Scripts\activate
+
+3. Install Python dependencies
    ```
    pip install -r requirements.txt
    ```
 
-3. Apply database migrations
+4. Apply database migrations
    ```
    python manage.py migrate
    ```
 
-4. Start the Django server
+5. Start the Django server
    ```
    python manage.py runserver
    ```
@@ -78,13 +77,3 @@ This script will:
 - **POST /items/**: Create a new item
 - **GET /items/{id}/**: Retrieve a specific item
 - **PATCH /items/{id}/**: Update a specific item
-- **DELETE /items/{id}/**: Delete a specific item
-
-## Troubleshooting
-
-If you encounter issues:
-
-1. Make sure both servers are running
-2. Check browser console for any frontend errors
-3. Check terminal output for backend errors
-4. Ensure no other services are using ports 3000 or 8000
