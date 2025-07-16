@@ -49,7 +49,7 @@ const UnderwritingDashboard = () => {
       <VStack spacing={6} align="stretch">
         <Box textAlign="center">
           <Heading size="xl" color="blue.600" mb={2}>
-            🏢 Dynamic Underwriting Assistant
+            🏢 Policy Management System
           </Heading>
           <Text fontSize="lg" color="gray.600">
             AI-Powered Risk Assessment and Policy Management System
