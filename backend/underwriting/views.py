@@ -1,25 +1,3 @@
-"""
-Underwriting API Views
-
-This module contains ViewSets for managing underwriting processes and data.
-
-New API Endpoints for Application Details:
-1. GET /api/underwriting/get_application_details/?application_id=<uuid>
-   - Retrieves comprehensive details for a specific application
-   - Includes related claims, policies, and regulations
-   - Returns risk assessment and red flags information
-
-2. GET /api/underwriting/list_applications/
-   - Lists all applications with optional filtering
-   - Query parameters: applicant_id, policy_id, lob, status
-   - Returns summary information for each application
-
-3. GET /api/underwriting/dashboard_overview/
-   - Provides dashboard-style overview of all applications
-   - Includes statistics, recent applications, and risk analysis
-   - Useful for monitoring and reporting purposes
-"""
-
 from rest_framework import viewsets, status
 from rest_framework.response import Response
 from rest_framework.decorators import action

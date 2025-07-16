@@ -34,11 +34,9 @@ class UnderwritingState(MessagesState):
     current_step: str = ""
 
 
-# Global instance for singleton pattern
 _EMBEDDING_SERVICE_INSTANCE = None
 
 def get_embedding_service():
-    """Get or create the singleton EmbeddingService instance"""
     global _EMBEDDING_SERVICE_INSTANCE
     if _EMBEDDING_SERVICE_INSTANCE is None:
         _EMBEDDING_SERVICE_INSTANCE = EmbeddingService()
@@ -51,7 +49,7 @@ class EmbeddingService:
     
     def __init__(self):
         """Initialize the embedding service with a FAISS index"""
-        self.dimension = 1536  # Standard embedding dimension for large language models
+        self.dimension = 1536 
         self.index = faiss.IndexFlatL2(self.dimension)
         self.chunk_metadata = []
         self.encoding = tiktoken.get_encoding("gpt2")
@@ -65,11 +63,9 @@ class EmbeddingService:
         tokens = self.encoding.encode(text)
         chunks = []
         
-        # If text is very small, return as a single chunk
         if len(tokens) <= chunk_size:
             return [text]
             
-        # Create overlapping chunks
         for i in range(0, len(tokens), chunk_size - overlap):
             chunk = self.encoding.decode(tokens[i:i + chunk_size])
             chunks.append(chunk)
@@ -78,22 +74,16 @@ class EmbeddingService:
         return chunks
     
     def get_embeddings(self, texts: List[str]) -> np.ndarray:
-        """Get embeddings for text chunks - uses deterministic mock embeddings for testing"""
-        # In a real implementation, this would call an embedding API
         embeddings = []
         
         for text in texts:
             if not text or not text.strip():
-                # For empty text, create a zero vector
                 embeddings.append(np.zeros(self.dimension))
                 continue
-                
-            # Create a deterministic embedding based on text hash
-            # This won't give good similarity results but ensures consistency for testing
+
             text_hash = hash(text) % 100000
             np.random.seed(text_hash)
             embedding = np.random.rand(self.dimension)
-            # Normalize the vector for better search results
             embedding = embedding / np.linalg.norm(embedding)
             embeddings.append(embedding)
         
@@ -118,10 +108,9 @@ class EmbeddingService:
             return 0
             
         # Generate embeddings for all chunks
-        start_idx = len(self.chunk_metadata)  # Track where these chunks start in the metadata list
+        start_idx = len(self.chunk_metadata) 
         embeddings_array = self.get_embeddings(all_chunks)
         
-        # Add embeddings to FAISS index
         try:
             self.index.add(embeddings_array)
             logger.info(f"Added {len(all_chunks)} chunks to index for {source} {doc_id}")
