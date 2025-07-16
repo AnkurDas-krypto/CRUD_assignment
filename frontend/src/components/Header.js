@@ -11,7 +11,7 @@ const Header = () => {
         <HStack spacing={3}>
           <Link to="/underwriting">
             <Button colorScheme="blue" size="sm">
-              🏢 Underwriting AI
+              🏢 Policy Management Assistant
             </Button>
           </Link>
           {/* <Link to="/speech">

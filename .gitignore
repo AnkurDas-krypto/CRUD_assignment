@@ -6,6 +6,9 @@ ENV/
 .venv/
 .env/
 
+# Embedded Git Repositories
+Agentic-LanggraphCrash-course/
+
 # Python
 __pycache__/
 *.py[cod]
@@ -45,6 +48,7 @@ db.sqlite3-journal
 
 # IDE
 .vscode/
+!.vscode/launch.json.example
 .idea/
 *.swp
 *.swo
